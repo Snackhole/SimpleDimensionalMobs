@@ -1,5 +1,6 @@
 package com.snackhole.simpledimensionalmobs;
 
+import com.snackhole.simpledimensionalmobs.entities.ModEntities;
 import com.snackhole.simpledimensionalmobs.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,6 +19,7 @@ public class SimpleDimensionalMobsMain {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ModEntities.init();
         proxy.preInit(event);
     }
 
