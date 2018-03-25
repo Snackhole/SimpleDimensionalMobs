@@ -1,19 +1,25 @@
 package com.snackhole.simpledimensionalmobs.entities;
 
+import com.google.common.base.Predicate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityDeepWolf extends EntityCaveSpider {
     public EntityDeepWolf(World worldIn) {
@@ -43,8 +49,21 @@ public class EntityDeepWolf extends EntityCaveSpider {
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
-        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntityVillager.class, true));
-        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<>(this, EntityIronGolem.class, true));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntitySootstrider.class, true));
+        this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<>(this, EntityPigZombie.class, 0, true, true, new Predicate<EntityPigZombie>() {
+
+            @Override
+            public boolean apply(@Nullable EntityPigZombie input) {
+                double radius = 30;
+                List<EntityPigZombie> nearbyPigZombies = input.world.getEntitiesWithinAABB(EntityPigZombie.class, new AxisAlignedBB(input.posX - radius, input.posY - radius, input.posZ - radius, input.posX + radius, input.posY + radius, input.posZ + radius));
+                List<EntityDeepWolf> nearbyDeepWolves = input.world.getEntitiesWithinAABB(EntityDeepWolf.class, new AxisAlignedBB(input.posX - radius, input.posY - radius, input.posZ - radius, input.posX + radius, input.posY + radius, input.posZ + radius));
+                int nearbyPigZombiesCount = nearbyPigZombies.size();
+                int nearbyDeepWolvesCount = nearbyDeepWolves.size();
+                return nearbyPigZombiesCount < 2 && nearbyDeepWolvesCount > 2;
+            }
+        }));
+        this.targetTasks.addTask(5, new EntityAINearestAttackableTarget<>(this, EntityVillager.class, true));
+        this.targetTasks.addTask(6, new EntityAINearestAttackableTarget<>(this, EntityIronGolem.class, true));
     }
 
     @Override
