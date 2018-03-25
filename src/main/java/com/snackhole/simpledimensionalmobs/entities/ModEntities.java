@@ -3,6 +3,7 @@ package com.snackhole.simpledimensionalmobs.entities;
 import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
 import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderDeepWolf;
 import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderMagmaLurcher;
+import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderSootstrider;
 import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderStalker;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
@@ -20,6 +21,7 @@ public class ModEntities {
         registerMob(EntityMagmaLurcher.class, "magma_lurcher", id++, "6a2e0e", "f89e44", Biomes.HELL);
         registerMob(EntityDeepWolf.class, "deep_wolf", id++, "09262c", "0fb600", Biomes.HELL);
         registerMob(EntityStalker.class, "stalker", id++, "37508f", "000000", Biomes.HELL);
+        registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
     }
 
     @SideOnly(Side.CLIENT)
@@ -27,6 +29,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityMagmaLurcher.class, RenderMagmaLurcher.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityDeepWolf.class, RenderDeepWolf.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, RenderStalker.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntitySootstrider.class, RenderSootstrider.FACTORY);
     }
 
     private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, Biome... biomes) {
