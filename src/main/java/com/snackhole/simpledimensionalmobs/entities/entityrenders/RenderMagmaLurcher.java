@@ -12,7 +12,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import javax.annotation.Nullable;
 
 public class RenderMagmaLurcher extends RenderLiving<EntityMagmaLurcher> {
-    private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/magmalurcher.png");
+    private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/magma_lurcher.png");
     public static final Factory FACTORY = new Factory();
 
     public RenderMagmaLurcher(RenderManager renderManagerIn) {

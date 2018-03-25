@@ -1,6 +1,5 @@
 package com.snackhole.simpledimensionalmobs.entities;
 
-import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
 import com.snackhole.simpledimensionalmobs.entities.entityai.EntityAIMagmaLurcherAttack;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
