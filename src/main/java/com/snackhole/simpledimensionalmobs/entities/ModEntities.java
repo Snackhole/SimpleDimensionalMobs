@@ -7,6 +7,7 @@ import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderSootstri
 import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderStalker;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityVex;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
@@ -22,6 +23,7 @@ public class ModEntities {
         registerMob(EntityDeepWolf.class, "deep_wolf", id++, "09262c", "0fb600", Biomes.HELL);
         registerMob(EntityStalker.class, "stalker", id++, "37508f", "000000", Biomes.HELL);
         registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
+        EntityRegistry.addSpawn(EntityVex.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.HELL);
     }
 
     @SideOnly(Side.CLIENT)

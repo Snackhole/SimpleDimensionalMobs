@@ -1,5 +1,6 @@
 package com.snackhole.simpledimensionalmobs.entities;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
@@ -8,7 +9,10 @@ import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 public class EntityDeepWolf extends EntityCaveSpider {
@@ -41,6 +45,26 @@ public class EntityDeepWolf extends EntityCaveSpider {
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, true));
         this.targetTasks.addTask(3, new EntityAINearestAttackableTarget<>(this, EntityVillager.class, true));
         this.targetTasks.addTask(4, new EntityAINearestAttackableTarget<>(this, EntityIronGolem.class, true));
+    }
+
+    @Override
+    public boolean attackEntityAsMob(Entity entityIn) {
+        if (super.attackEntityAsMob(entityIn)) {
+            if (entityIn instanceof EntityLivingBase) {
+                int i = 0;
+                if (this.world.getDifficulty() == EnumDifficulty.NORMAL) {
+                    i = 7;
+                } else if (this.world.getDifficulty() == EnumDifficulty.HARD) {
+                    i = 15;
+                }
+                if (i > 0) {
+                    ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, i * 20, 0));
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     static class AIDeepWolfAttack extends EntityAIAttackMelee {
