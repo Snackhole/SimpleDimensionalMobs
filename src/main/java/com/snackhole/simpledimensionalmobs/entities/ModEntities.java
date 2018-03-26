@@ -26,6 +26,7 @@ public class ModEntities {
         EntityRegistry.addSpawn(EntityEnderman.class, 26, 4, 4, EnumCreatureType.MONSTER, Biomes.SKY);
         registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 5, Biomes.SKY);
         registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 1, Biomes.SKY);
+        registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 1, Biomes.SKY);
     }
 
     @SideOnly(Side.CLIENT)
@@ -36,6 +37,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntitySootstrider.class, RenderSootstrider.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityEndermiteSpawned.class, RenderEndermite::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFarSpider.class, RenderFarSpider.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityVoidOoze.class, RenderVoidOoze.FACTORY);
     }
 
     private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, Biome... biomes) {
