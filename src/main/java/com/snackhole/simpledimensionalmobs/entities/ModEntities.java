@@ -1,10 +1,7 @@
 package com.snackhole.simpledimensionalmobs.entities;
 
 import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
-import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderDeepWolf;
-import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderMagmaLurcher;
-import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderSootstrider;
-import com.snackhole.simpledimensionalmobs.entities.entityrenders.RenderStalker;
+import com.snackhole.simpledimensionalmobs.entities.entityrenders.*;
 import net.minecraft.client.renderer.entity.RenderEndermite;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
@@ -25,7 +22,8 @@ public class ModEntities {
         registerMob(EntityStalker.class, "stalker", id++, "37508f", "000000", Biomes.HELL);
         registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
         EntityRegistry.addSpawn(EntityVex.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.HELL);
-        registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 10, Biomes.SKY);
+        registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 5, Biomes.SKY);
+        registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 1, Biomes.SKY);
     }
 
     @SideOnly(Side.CLIENT)
@@ -35,6 +33,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, RenderStalker.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntitySootstrider.class, RenderSootstrider.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityEndermiteSpawned.class, RenderEndermite::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFarSpider.class, RenderFarSpider.FACTORY);
     }
 
     private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, Biome... biomes) {

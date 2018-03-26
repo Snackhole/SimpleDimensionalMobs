@@ -7,7 +7,7 @@ import net.minecraftforge.fml.relauncher.ReflectionHelper;
 public class EntityEndermiteSpawned extends EntityEndermite {
     public EntityEndermiteSpawned(World worldIn) {
         super(worldIn);
-        if (rand.nextInt(40) == 0) {
+        if (rand.nextInt(60) == 0) {
             setSpawnedByPlayer(true);
         }
     }
