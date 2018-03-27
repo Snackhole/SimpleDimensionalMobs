@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.entity.RenderEndermite;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityShulker;
 import net.minecraft.entity.monster.EntityVex;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
@@ -24,10 +25,11 @@ public class ModEntities {
         registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
         EntityRegistry.addSpawn(EntityVex.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.HELL);
         EntityRegistry.addSpawn(EntityEnderman.class, 50, 4, 4, EnumCreatureType.MONSTER, Biomes.SKY);
-        registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 20, Biomes.SKY);
+        registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 18, Biomes.SKY);
         registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 18, 4, 6, Biomes.SKY);
-        registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 7, 1, 2, Biomes.SKY);
-        registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 5, 1, 1, Biomes.SKY);
+        registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 8, 1, 2, Biomes.SKY);
+        registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 3, 1, 1, Biomes.SKY);
+        EntityRegistry.addSpawn(EntityShulker.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.SKY);
     }
 
     @SideOnly(Side.CLIENT)
