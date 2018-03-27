@@ -13,7 +13,6 @@ import javax.annotation.Nullable;
 
 public class RenderSootstrider extends RenderLiving<EntitySootstrider> {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/sootstrider.png");
-    public static final Factory FACTORY = new Factory();
 
     public RenderSootstrider(RenderManager rendermanagerIn) {
         super(rendermanagerIn, new ModelSilverfish(), (float) 0.3);
@@ -28,12 +27,5 @@ public class RenderSootstrider extends RenderLiving<EntitySootstrider> {
     @Override
     protected ResourceLocation getEntityTexture(EntitySootstrider entity) {
         return mobTexture;
-    }
-
-    public static class Factory implements IRenderFactory<EntitySootstrider> {
-        @Override
-        public Render<? super EntitySootstrider> createRenderFor(RenderManager manager) {
-            return new RenderSootstrider(manager);
-        }
     }
 }

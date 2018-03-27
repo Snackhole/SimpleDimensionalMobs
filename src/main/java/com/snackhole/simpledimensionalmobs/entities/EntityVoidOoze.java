@@ -71,4 +71,9 @@ public class EntityVoidOoze extends EntitySlime {
     protected boolean canDamagePlayer() {
         return true;
     }
+
+    @Override
+    protected EnumParticleTypes getParticleType() {
+        return EnumParticleTypes.SPELL_WITCH;
+    }
 }

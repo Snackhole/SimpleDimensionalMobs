@@ -13,7 +13,6 @@ import javax.annotation.Nullable;
 
 public class RenderMagmaLurcher extends RenderLiving<EntityMagmaLurcher> {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/magma_lurcher.png");
-    public static final Factory FACTORY = new Factory();
 
     public RenderMagmaLurcher(RenderManager renderManagerIn) {
         super(renderManagerIn, new ModelZombie(), (float) 0.5);
@@ -23,12 +22,5 @@ public class RenderMagmaLurcher extends RenderLiving<EntityMagmaLurcher> {
     @Override
     protected ResourceLocation getEntityTexture(EntityMagmaLurcher entity) {
         return mobTexture;
-    }
-
-    public static class Factory implements IRenderFactory<EntityMagmaLurcher> {
-        @Override
-        public Render<? super EntityMagmaLurcher> createRenderFor(RenderManager manager) {
-            return new RenderMagmaLurcher(manager);
-        }
     }
 }

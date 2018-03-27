@@ -11,7 +11,6 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderStalker extends RenderCreeper {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/stalker.png");
-    public static final Factory FACTORY = new Factory();
 
     public RenderStalker(RenderManager rendermanagerIn) {
         super(rendermanagerIn);
@@ -20,12 +19,5 @@ public class RenderStalker extends RenderCreeper {
     @Override
     protected ResourceLocation getEntityTexture(EntityCreeper entity) {
         return mobTexture;
-    }
-
-    public static class Factory implements IRenderFactory<EntityStalker> {
-        @Override
-        public Render<? super EntityStalker> createRenderFor(RenderManager manager) {
-            return new RenderStalker(manager);
-        }
     }
 }

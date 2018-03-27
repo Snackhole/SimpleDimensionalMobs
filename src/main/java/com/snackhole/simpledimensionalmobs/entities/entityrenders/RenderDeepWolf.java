@@ -4,17 +4,14 @@ import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
 import com.snackhole.simpledimensionalmobs.entities.EntityDeepWolf;
 import net.minecraft.client.model.ModelSpider;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nullable;
 
 public class RenderDeepWolf extends RenderLiving<EntityDeepWolf> {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/deep_wolf.png");
-    public static final Factory FACTORY = new Factory();
 
     public RenderDeepWolf(RenderManager rendermanagerIn) {
         super(rendermanagerIn, new ModelSpider(), (float) 1.3);
@@ -34,12 +31,5 @@ public class RenderDeepWolf extends RenderLiving<EntityDeepWolf> {
     @Override
     protected ResourceLocation getEntityTexture(EntityDeepWolf entity) {
         return mobTexture;
-    }
-
-    public static class Factory implements IRenderFactory<EntityDeepWolf> {
-        @Override
-        public Render<? super EntityDeepWolf> createRenderFor(RenderManager manager) {
-            return new RenderDeepWolf(manager);
-        }
     }
 }

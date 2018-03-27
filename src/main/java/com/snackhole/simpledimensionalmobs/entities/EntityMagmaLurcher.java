@@ -86,9 +86,9 @@ public class EntityMagmaLurcher extends EntityMob {
     public boolean attackEntityAsMob(Entity entityIn) {
         boolean flag = super.attackEntityAsMob(entityIn);
         if (flag) {
-            float f = this.world.getDifficultyForLocation(new BlockPos(this)).getAdditionalDifficulty();
+            int duration = (int) this.world.getDifficultyForLocation(new BlockPos(this)).getAdditionalDifficulty();
             if (this.getHeldItemMainhand().isEmpty()) {
-                entityIn.setFire(2 * (int) f);
+                entityIn.setFire(2 * duration);
             }
         }
         return flag;

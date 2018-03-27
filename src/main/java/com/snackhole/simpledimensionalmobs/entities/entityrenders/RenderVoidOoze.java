@@ -11,7 +11,6 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderVoidOoze extends RenderSlime {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/void_ooze.png");
-    public static final Factory FACTORY = new Factory();
 
     public RenderVoidOoze(RenderManager manager) {
         super(manager);
@@ -20,12 +19,5 @@ public class RenderVoidOoze extends RenderSlime {
     @Override
     protected ResourceLocation getEntityTexture(EntitySlime entity) {
         return mobTexture;
-    }
-
-    public static class Factory implements IRenderFactory<EntityVoidOoze> {
-        @Override
-        public Render<? super EntityVoidOoze> createRenderFor(RenderManager manager) {
-            return new RenderVoidOoze(manager);
-        }
     }
 }
