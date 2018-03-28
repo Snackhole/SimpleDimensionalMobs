@@ -20,17 +20,17 @@ public class ModEntities {
     public static void init() {
         int id = 1;
         registerMob(EntityMagmaLurcher.class, "magma_lurcher", id++, "6a2e0e", "f89e44", Biomes.HELL);
-        registerMob(EntityMagmaLord.class, "magma_lord", id++, "6a2e0e", "f89e44", 10, 1, 1, Biomes.HELL);
+        registerMob(EntityMagmaLord.class, "magma_lord", id++, "6a2e0e", "f89e44", 5, Biomes.HELL);
         registerMob(EntityDeepWolf.class, "deep_wolf", id++, "09262c", "0fb600", Biomes.HELL);
         registerMob(EntityStalker.class, "stalker", id++, "37508f", "000000", Biomes.HELL);
         registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
         EntityRegistry.addSpawn(EntityVex.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.HELL);
         EntityRegistry.addSpawn(EntityEnderman.class, 50, 4, 4, EnumCreatureType.MONSTER, Biomes.SKY);
         registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 18, Biomes.SKY);
-        registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 18, 4, 6, Biomes.SKY);
-        registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 8, 1, 2, Biomes.SKY);
-        registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 3, 1, 1, Biomes.SKY);
-        EntityRegistry.addSpawn(EntityShulker.class, 3, 1, 1, EnumCreatureType.MONSTER, Biomes.SKY);
+        registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 18, Biomes.SKY);
+        registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 8, Biomes.SKY);
+        registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 3, Biomes.SKY);
+        EntityRegistry.addSpawn(EntityShulker.class, 3, 3, 5, EnumCreatureType.MONSTER, Biomes.SKY);
     }
 
     @SideOnly(Side.CLIENT)
@@ -54,10 +54,5 @@ public class ModEntities {
     private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, int weight, Biome... biomes) {
         EntityRegistry.registerModEntity(new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":" + name), entityClass, name, id, SimpleDimensionalMobsMain.simpleDimensionalMobsMainInstance, 64, 3, true, Integer.parseInt(eggPrimary, 16), Integer.parseInt(eggSecondary, 16));
         EntityRegistry.addSpawn(entityClass, weight, 3, 5, EnumCreatureType.MONSTER, biomes);
-    }
-
-    private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, int weight, int min, int max, Biome... biomes) {
-        EntityRegistry.registerModEntity(new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":" + name), entityClass, name, id, SimpleDimensionalMobsMain.simpleDimensionalMobsMainInstance, 64, 3, true, Integer.parseInt(eggPrimary, 16), Integer.parseInt(eggSecondary, 16));
-        EntityRegistry.addSpawn(entityClass, weight, min, max, EnumCreatureType.MONSTER, biomes);
     }
 }

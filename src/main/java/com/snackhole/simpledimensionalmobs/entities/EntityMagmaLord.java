@@ -29,10 +29,10 @@ public class EntityMagmaLord extends EntityMagmaLurcher {
         super.onLivingUpdate();
         if (this.world.isRemote) {
             for (int i = 0; i < 2; ++i) {
-                this.world.spawnParticle(EnumParticleTypes.BARRIER.FLAME, this.posX + (this.rand.nextDouble() - 0.5D) * (double) this.width, this.posY + this.rand.nextDouble() * (double) this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double) this.width, (double) 0, (double) 0, (double) 0);
+                this.world.spawnParticle(EnumParticleTypes.FLAME, this.posX + (this.rand.nextDouble() - 0.5D) * (double) this.width, this.posY + this.rand.nextDouble() * (double) this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double) this.width, (double) 0, (double) 0, (double) 0);
             }
         }
-        int radius = 8;
+        int radius = 4;
         List<EntityPlayer> nearbyPlayers = world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(posX - radius, posY - radius, posZ - radius, posX + radius, posY + radius, posZ + radius));
         int duration = (int) this.world.getDifficultyForLocation(new BlockPos(this)).getAdditionalDifficulty();
         if (duration > 0) {
