@@ -95,4 +95,9 @@ public class EntityDeepWolf extends EntityCaveSpider {
             return (double) (4.0F + attackTarget.width);
         }
     }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        return this.world.getDifficulty() != EnumDifficulty.PEACEFUL;
+    }
 }

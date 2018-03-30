@@ -19,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.relauncher.Side;
@@ -122,5 +123,10 @@ public class EntityMagmaLurcher extends EntityMob {
 
     protected void playStepSound(BlockPos pos, Block blockIn) {
         playSound(getStepSound(), (float) 0.15, (float) 1);
+    }
+
+    @Override
+    public boolean getCanSpawnHere() {
+        return this.world.getDifficulty() != EnumDifficulty.PEACEFUL;
     }
 }
