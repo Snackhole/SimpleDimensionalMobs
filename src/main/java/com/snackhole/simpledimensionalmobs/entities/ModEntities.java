@@ -33,6 +33,7 @@ public class ModEntities {
         registerMob(EntityFarHarvestman.class, "far_harvestman", id++, "313030", "e905ff", 1, Biomes.SKY);
         registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 8, Biomes.SKY);
         registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 3, Biomes.SKY);
+        registerMob(EntityEldritchGoliath.class, "eldritch_goliath", id++, "45374d", "003834", 1, Biomes.SKY);
         EntityRegistry.addSpawn(EntityShulker.class, 3, 3, 5, EnumCreatureType.MONSTER, Biomes.SKY);
     }
 
@@ -50,6 +51,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityFarHarvestman.class, RenderFarHarvestman::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityVoidOoze.class, RenderVoidOoze::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityEldritchAutomaton.class, RenderEldritchAutomaton::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityEldritchGoliath.class, RenderEldritchGoliath::new);
     }
 
     private static void registerMob(Class<? extends EntityLiving> entityClass, String name, int id, String eggPrimary, String eggSecondary, Biome... biomes) {
