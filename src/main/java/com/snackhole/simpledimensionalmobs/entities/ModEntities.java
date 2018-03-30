@@ -29,6 +29,8 @@ public class ModEntities {
         EntityRegistry.addSpawn(EntityEnderman.class, 50, 4, 4, EnumCreatureType.MONSTER, Biomes.SKY);
         registerMob(EntityEndermiteSpawned.class, "endermite_spawned", id++, "161616", "6E6E6E", 18, Biomes.SKY);
         registerMob(EntityFarSpider.class, "far_spider", id++, "313030", "e905ff", 18, Biomes.SKY);
+        registerMob(EntityFarHuntsman.class, "far_huntsman", id++, "313030", "e905ff", 1, Biomes.SKY);
+        registerMob(EntityFarHarvestman.class, "far_harvestman", id++, "313030", "e905ff", 1, Biomes.SKY);
         registerMob(EntityVoidOoze.class, "void_ooze", id++, "a26ebf", "7d3ea0", 8, Biomes.SKY);
         registerMob(EntityEldritchAutomaton.class, "eldritch_automaton", id++, "45374d", "003834", 3, Biomes.SKY);
         EntityRegistry.addSpawn(EntityShulker.class, 3, 3, 5, EnumCreatureType.MONSTER, Biomes.SKY);
@@ -44,6 +46,8 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntitySootstrider.class, RenderSootstrider::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityEndermiteSpawned.class, RenderEndermite::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityFarSpider.class, RenderFarSpider::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFarHuntsman.class, RenderFarHuntsman::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFarHarvestman.class, RenderFarHarvestman::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityVoidOoze.class, RenderVoidOoze::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityEldritchAutomaton.class, RenderEldritchAutomaton::new);
     }

@@ -7,5 +7,7 @@ entity.stalker.name=Stalker
 entity.sootstrider.name=Sootstrider
 entity.endermite_spawned.name=Endermite
 entity.far_spider.name=Far Spider
+entity.far_huntsman.name=Far Huntsman
+entity.far_harvestman.name=Far Harvestman
 entity.void_ooze.name=Void Ooze
 entity.eldritch_automaton.name=Eldritch Automaton
