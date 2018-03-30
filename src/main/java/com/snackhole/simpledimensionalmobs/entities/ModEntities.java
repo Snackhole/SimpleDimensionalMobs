@@ -22,6 +22,7 @@ public class ModEntities {
         registerMob(EntityMagmaLurcher.class, "magma_lurcher", id++, "6a2e0e", "f89e44", Biomes.HELL);
         registerMob(EntityMagmaLord.class, "magma_lord", id++, "6a2e0e", "f89e44", 5, Biomes.HELL);
         registerMob(EntityDeepWolf.class, "deep_wolf", id++, "09262c", "0fb600", Biomes.HELL);
+        registerMob(EntityDeepBear.class, "deep_bear", id++, "09262c", "0fb600", 5, Biomes.HELL);
         registerMob(EntityStalker.class, "stalker", id++, "37508f", "000000", Biomes.HELL);
         registerMob(EntitySootstrider.class, "sootstrider", id++, "4f4f4f", "000000", Biomes.HELL);
         EntityRegistry.addSpawn(EntityVex.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.HELL);
@@ -38,6 +39,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityMagmaLurcher.class, RenderMagmaLurcher::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityMagmaLord.class, RenderMagmaLord::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityDeepWolf.class, RenderDeepWolf::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityDeepBear.class, RenderDeepBear::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityStalker.class, RenderStalker::new);
         RenderingRegistry.registerEntityRenderingHandler(EntitySootstrider.class, RenderSootstrider::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityEndermiteSpawned.class, RenderEndermite::new);
