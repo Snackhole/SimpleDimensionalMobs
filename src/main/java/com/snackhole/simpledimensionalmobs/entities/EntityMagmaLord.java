@@ -13,7 +13,7 @@ public class EntityMagmaLord extends EntityMagmaLurcher {
     public EntityMagmaLord(World worldIn) {
         super(worldIn);
         setSize((float) 0.9, (float) 2.925);
-        experienceValue *= 2;
+        experienceValue *= 5;
     }
 
     @Override

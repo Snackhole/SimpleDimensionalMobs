@@ -2,6 +2,7 @@ package com.snackhole.simpledimensionalmobs.entities.entityrenders;
 
 import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
 import com.snackhole.simpledimensionalmobs.entities.EntityMagmaLurcher;
+import com.snackhole.simpledimensionalmobs.entities.entitymodels.ModelMagmaLurcher;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +16,7 @@ public class RenderMagmaLurcher extends RenderLiving<EntityMagmaLurcher> {
     private ResourceLocation mobTexture = new ResourceLocation(SimpleDimensionalMobsMain.MODID + ":textures/entity/magma_lurcher.png");
 
     public RenderMagmaLurcher(RenderManager renderManagerIn) {
-        super(renderManagerIn, new ModelZombie(), (float) 0.5);
+        super(renderManagerIn, new ModelMagmaLurcher(), (float) 0.5);
     }
 
     @Nullable
