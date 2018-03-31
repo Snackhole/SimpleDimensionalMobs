@@ -12,3 +12,6 @@ entity.far_harvestman.name=Far Harvestman
 entity.void_ooze.name=Void Ooze
 entity.eldritch_automaton.name=Eldritch Automaton
 entity.eldritch_goliath.name=Eldritch Goliath
+
+# Items
+item.oozeball.name=Oozeball

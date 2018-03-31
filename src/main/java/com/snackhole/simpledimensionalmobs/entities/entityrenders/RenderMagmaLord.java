@@ -4,7 +4,7 @@ import com.snackhole.simpledimensionalmobs.entities.EntityMagmaLurcher;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderManager;
 
-public class RenderMagmaLord extends  RenderMagmaLurcher {
+public class RenderMagmaLord extends RenderMagmaLurcher {
     public RenderMagmaLord(RenderManager renderManagerIn) {
         super(renderManagerIn);
         shadowSize *= 1.5;

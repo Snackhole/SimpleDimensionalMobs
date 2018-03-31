@@ -11,13 +11,17 @@ import net.minecraft.entity.monster.EntityVex;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModEntities {
+    public static ResourceLocation voidOozeLoot = new ResourceLocation(SimpleDimensionalMobsMain.MODID, "void_ooze_loot");
+
     public static void init() {
+        LootTableList.register(voidOozeLoot);
         int id = 1;
         registerMob(EntityMagmaLurcher.class, "magma_lurcher", id++, "6a2e0e", "f89e44", Biomes.HELL);
         registerMob(EntityMagmaLord.class, "magma_lord", id++, "6a2e0e", "f89e44", 5, Biomes.HELL);

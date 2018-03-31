@@ -3,12 +3,9 @@ package com.snackhole.simpledimensionalmobs.entities.entityrenders;
 import com.snackhole.simpledimensionalmobs.SimpleDimensionalMobsMain;
 import com.snackhole.simpledimensionalmobs.entities.EntityMagmaLurcher;
 import com.snackhole.simpledimensionalmobs.entities.entitymodels.ModelMagmaLurcher;
-import net.minecraft.client.model.ModelZombie;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nullable;
 

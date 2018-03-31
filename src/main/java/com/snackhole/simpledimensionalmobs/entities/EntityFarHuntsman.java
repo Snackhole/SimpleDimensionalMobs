@@ -18,7 +18,7 @@ public class EntityFarHuntsman extends EntityFarSpider {
     @Override
     public boolean attackEntityAsMob(Entity entityIn) {
         if (super.attackEntityAsMob(entityIn)) {
-            if (entityIn instanceof  EntityEndermiteSpawned) {
+            if (entityIn instanceof EntityEndermiteSpawned) {
                 return true;
             }
             if (entityIn instanceof EntityLivingBase) {

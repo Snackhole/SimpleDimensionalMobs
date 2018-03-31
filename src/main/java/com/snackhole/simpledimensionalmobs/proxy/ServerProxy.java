@@ -1,6 +1,7 @@
 package com.snackhole.simpledimensionalmobs.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -27,5 +28,9 @@ public class ServerProxy implements IProxy {
     @Override
     public EntityPlayer getPlayerEntityFromContext(MessageContext parContext) {
         return parContext.getServerHandler().player;
+    }
+
+    @Override
+    public void registerItemRenderer(Item item, int meta, String id) {
     }
 }

@@ -93,13 +93,12 @@ public class ModelEldritchAutomaton extends ModelBase {
             this.ironGolemRightArm.rotateAngleX = (float) -2 + (float) 1.5 * this.triangleWave((float) attackTimer - partialTickTime, (float) 10);
             this.ironGolemLeftArm.rotateAngleX = (float) -2 + (float) 1.5 * this.triangleWave((float) attackTimer - partialTickTime, (float) 10);
         } else {
-            this.ironGolemRightArm.rotateAngleX = ((float)-0.2 + (float) 1.5 * this.triangleWave(limbSwing, (float) 13)) * limbSwingAmount;
-            this.ironGolemLeftArm.rotateAngleX = ((float)-0.2 - (float) 1.5 * this.triangleWave(limbSwing, (float) 13)) * limbSwingAmount;
+            this.ironGolemRightArm.rotateAngleX = ((float) -0.2 + (float) 1.5 * this.triangleWave(limbSwing, (float) 13)) * limbSwingAmount;
+            this.ironGolemLeftArm.rotateAngleX = ((float) -0.2 - (float) 1.5 * this.triangleWave(limbSwing, (float) 13)) * limbSwingAmount;
         }
     }
 
-    private float triangleWave(float float1, float float2)
-    {
+    private float triangleWave(float float1, float float2) {
         return (Math.abs(float1 % float2 - float2 * 0.5F) - float2 * 0.25F) / (float2 * 0.25F);
     }
 }

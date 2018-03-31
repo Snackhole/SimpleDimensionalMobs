@@ -1,15 +1,20 @@
 package com.snackhole.simpledimensionalmobs.entities;
 
+import com.snackhole.simpledimensionalmobs.items.ModItems;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class EntityVoidOoze extends EntitySlime {
@@ -75,5 +80,16 @@ public class EntityVoidOoze extends EntitySlime {
     @Override
     protected EnumParticleTypes getParticleType() {
         return EnumParticleTypes.SPELL_WITCH;
+    }
+
+    @Override
+    protected Item getDropItem() {
+        return this.getSlimeSize() == 1 ? ModItems.oozeBall : null;
+    }
+
+    @Nullable
+    @Override
+    protected ResourceLocation getLootTable() {
+        return this.getSlimeSize() == 1 ? ModEntities.voidOozeLoot : LootTableList.EMPTY;
     }
 }
